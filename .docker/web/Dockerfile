@@ -1,6 +1,4 @@
-FROM php:5.6-apache
-# FROM php:5.5-apache
-
+FROM php:5.4-apache
 
 ADD php.ini /usr/local/etc/php/php.ini
 
@@ -8,8 +6,8 @@ ADD php.ini /usr/local/etc/php/php.ini
 RUN BEFORE_PWD=$(pwd) \
     && mkdir -p /opt/xdebug \
     && cd /opt/xdebug \
-    && curl -k -L https://github.com/xdebug/xdebug/archive/XDEBUG_2_5_5.tar.gz | tar zx \
-    && cd xdebug-XDEBUG_2_5_5 \
+    && curl -k -L https://github.com/xdebug/xdebug/archive/XDEBUG_2_2_7.tar.gz | tar zx \
+    && cd xdebug-XDEBUG_2_2_7 \
     && phpize \
     && ./configure --enable-xdebug \
     && make clean \
